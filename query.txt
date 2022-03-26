@@ -1,0 +1,6 @@
+db.weather.aggregate([ 
+	{	
+		$match:{}}, 
+		{$group: {_id:{minutes: { $minute: "$timestamp"}}, average: {$avg: "$temp"}} 
+	} 
+]);
